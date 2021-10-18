@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   目前样式只存在一种， 基于图片和CAShapeLayer实现
   DESC
 
-  spec.homepage     = "https://github.com/ShenYj/BatteryWidget"
+  spec.homepage       = "https://github.com/ShenYj/BatteryWidget"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -41,7 +41,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
   
-  spec.license      = { :type => "MIT", :file => "License" }
+  spec.license        = { :type => "MIT", :file => "License" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -54,7 +54,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "ShenYj" => "shenyanjie123@foxmail.com" }
+  spec.author               = { "ShenYj" => "shenyanjie123@foxmail.com" }
   # Or just: spec.author    = "ShenYj"
   # spec.authors            = { "ShenYj" => "shenyanjie123@foxmail.com" }
   # spec.social_media_url   = "https://twitter.com/ShenYj"

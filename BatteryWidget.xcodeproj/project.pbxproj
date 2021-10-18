@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F738805F271DBA990056DFDC /* BatteryWidget.docc in Sources */ = {isa = PBXBuildFile; fileRef = F738805E271DBA990056DFDC /* BatteryWidget.docc */; };
 		F738806E271DBAD90056DFDC /* String+ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7388068271DBAD90056DFDC /* String+ImageName.swift */; };
 		F738806F271DBAD90056DFDC /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7388069271DBAD90056DFDC /* UIColor+Ex.swift */; };
 		F7388070271DBAD90056DFDC /* UIImage+tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F738806A271DBAD90056DFDC /* UIImage+tintColor.swift */; };
@@ -65,6 +64,7 @@
 		F73880A3271DBB670056DFDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73880A4271DBB670056DFDC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F73880BD271DBDE50056DFDC /* BatteryWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryWidget.h; sourceTree = "<group>"; };
+		F73880C0271DC5860056DFDC /* BatteryWidget.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BatteryWidget.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +89,7 @@
 		F7388050271DBA990056DFDC = {
 			isa = PBXGroup;
 			children = (
+				F73880C0271DC5860056DFDC /* BatteryWidget.podspec */,
 				F738809B271DBB670056DFDC /* Examples */,
 				F7388066271DBAD90056DFDC /* Sources */,
 				F738805C271DBA990056DFDC /* BatteryWidget */,
@@ -274,7 +275,6 @@
 				F7388070271DBAD90056DFDC /* UIImage+tintColor.swift in Sources */,
 				F738806F271DBAD90056DFDC /* UIColor+Ex.swift in Sources */,
 				F73880AA271DBB680056DFDC /* AppDelegate.swift in Sources */,
-				F738805F271DBA990056DFDC /* BatteryWidget.docc in Sources */,
 				F738806E271DBAD90056DFDC /* String+ImageName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
