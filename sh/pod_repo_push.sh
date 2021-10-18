@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pod trunk push ../Battery.podspec --allow-warnings
+pod trunk push ../BatteryWidget.podspec --allow-warnings
