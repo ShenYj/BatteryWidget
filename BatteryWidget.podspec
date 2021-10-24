@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BatteryWidget"
-  spec.version      = "0.0.2"
+  spec.version      = "1.0.0"
   spec.summary      = "A basic Widget of Battery."
 
   # This description is used to generate tags and improve search results.
