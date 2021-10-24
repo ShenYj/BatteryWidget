@@ -12,7 +12,6 @@
 		F7388070271DBAD90056DFDC /* UIImage+tintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F738806A271DBAD90056DFDC /* UIImage+tintColor.swift */; };
 		F7388071271DBAD90056DFDC /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F738806B271DBAD90056DFDC /* Battery.swift */; };
 		F7388072271DBAD90056DFDC /* icons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F738806C271DBAD90056DFDC /* icons.bundle */; };
-		F73880AA271DBB680056DFDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73880A3271DBB670056DFDC /* AppDelegate.swift */; };
 		F73880B1271DBBDB0056DFDC /* BatteryWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F738805A271DBA990056DFDC /* BatteryWidget.framework */; platformFilter = ios; };
 		F73880B2271DBBDB0056DFDC /* BatteryWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F738805A271DBA990056DFDC /* BatteryWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F73880B7271DBC7B0056DFDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73880A3271DBB670056DFDC /* AppDelegate.swift */; };
@@ -274,7 +273,6 @@
 				F7388071271DBAD90056DFDC /* Battery.swift in Sources */,
 				F7388070271DBAD90056DFDC /* UIImage+tintColor.swift in Sources */,
 				F738806F271DBAD90056DFDC /* UIColor+Ex.swift in Sources */,
-				F73880AA271DBB680056DFDC /* AppDelegate.swift in Sources */,
 				F738806E271DBAD90056DFDC /* String+ImageName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
