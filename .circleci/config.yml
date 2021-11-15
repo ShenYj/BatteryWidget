@@ -10,9 +10,13 @@ jobs:
   "BatteryWidget CI":
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    parallelism: 1
+    shell: /bin/bash --login
+    environment:
+      XCODE_TEST_REPORTS: /tmp/xcode-test-results
+      LANG: en_US.UTF-8
     macos:
       xcode: 13.1.0 # Specify the Xcode version to use
-    parallelism: 1
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     # carthage update --use-xcframeworks
