@@ -15,6 +15,7 @@ jobs:
     parallelism: 1
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    # #carthage update --use-xcframeworks
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
@@ -28,7 +29,12 @@ jobs:
           command: |
             brew update
             brew upgrade carthage
-            carthage update --use-xcframeworks
+            carthage bootstrap
+      - run:
+          name: Carthage Deploy
+          command: |
+            carthage build --no-skip-current
+            carthage archive BatteryWidget
       - save_cache:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
