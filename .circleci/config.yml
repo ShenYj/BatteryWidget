@@ -73,7 +73,9 @@ workflows:
   build:
     jobs:
       - "BatteryWidget CI"
-      #- "BatteryWidget Release"
+      - "BatteryWidget Release"
+        requires:
+          - "BatteryWidget CI"
 
 
 
