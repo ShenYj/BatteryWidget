@@ -10,6 +10,7 @@ jobs:
   "BatteryWidget CI":
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    working_directory: ~/ShenYj/BatteryWidget
     parallelism: 1
     shell: /bin/bash --login
     environment:
@@ -19,7 +20,6 @@ jobs:
       xcode: '13.1.0' # Specify the Xcode version to use
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    # carthage update --use-xcframeworks
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
@@ -31,12 +31,14 @@ jobs:
       - run:
           name: Bootstrap Carthage
           command: |
+            echo "Bootstrap Carthage"
             brew update
             brew upgrade carthage
             carthage bootstrap
       - run:
           name: Carthage Deploy
           command: |
+            echo "Carthage Deploy"
             carthage build --no-skip-current
             carthage archive BatteryWidget
       - save_cache:
@@ -59,6 +61,9 @@ jobs:
                    -destination "name=iPhone 11" | xcpretty -c --test
       - store_artifacts:
           path: /tmp/xcode-test-results
+  "BatteryWidget Release":
+    macos:
+      xcode: '13.1.0'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -67,7 +72,7 @@ workflows:
   build:
     jobs:
       - "BatteryWidget CI"
-
+      - "BatteryWidget Release"
 
 
 
