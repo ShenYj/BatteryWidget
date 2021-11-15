@@ -60,8 +60,8 @@ jobs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   version: 2
-    build:
-      jobs:
+  build:
+    jobs:
       - "BatteryWidget CI"
 
 
