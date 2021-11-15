@@ -16,7 +16,7 @@ jobs:
       XCODE_TEST_REPORTS: /tmp/xcode-test-results
       LANG: en_US.UTF-8
     macos:
-      xcode: 13.1.0 # Specify the Xcode version to use
+      xcode: '13.1.0' # Specify the Xcode version to use
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     # carthage update --use-xcframeworks
