@@ -2,12 +2,12 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 # For a detailed guide to building and testing on iOS, read the docs:
 # https://circleci.com/docs/2.0/testing-ios/
-version: 2.1
+version: 2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
+  "BatteryWidget CI":
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     macos:
@@ -15,7 +15,7 @@ jobs:
     parallelism: 1
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    # #carthage update --use-xcframeworks
+    # carthage update --use-xcframeworks
     steps:
       - checkout
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS $XCODE_TEST_REPORTS
@@ -59,12 +59,14 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
-    jobs:
-      - build
+  version: 2
+    build:
+      jobs:
+      - "BatteryWidget CI"
 
 
 
 
-              
+# https://github.com/CircleCI-Public/circleci-demo-ios
+# https://github.com/CircleCI-Public/circleci-demo-macos
+# https://github.com/CircleCI-Public/macos-orb
