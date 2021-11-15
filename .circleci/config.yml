@@ -2,12 +2,15 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 # For a detailed guide to building and testing on iOS, read the docs:
 # https://circleci.com/docs/2.0/testing-ios/
+---
 version: 2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   "BatteryWidget CI":
+    macos:
+      xcode: '13.1.0'
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     working_directory: ~/ShenYj/BatteryWidget
@@ -16,8 +19,6 @@ jobs:
     environment:
       XCODE_TEST_REPORTS: /tmp/xcode-test-results
       LANG: en_US.UTF-8
-    macos:
-      xcode: '13.1.0' # Specify the Xcode version to use
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -72,7 +73,7 @@ workflows:
   build:
     jobs:
       - "BatteryWidget CI"
-      - "BatteryWidget Release"
+      #- "BatteryWidget Release"
 
 
 
