@@ -2,17 +2,23 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 # For a detailed guide to building and testing on iOS, read the docs:
 # https://circleci.com/docs/2.0/testing-ios/
-version: 2.1
+---
+version: 2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
+  "BatteryWidget CI":
+    macos:
+      xcode: '13.1.0'
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    macos:
-      xcode: 13.1.0 # Specify the Xcode version to use
+    working_directory: ~/ShenYj/BatteryWidget
     parallelism: 1
+    shell: /bin/bash --login
+    environment:
+      XCODE_TEST_REPORTS: /tmp/xcode-test-results
+      LANG: en_US.UTF-8
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -26,9 +32,16 @@ jobs:
       - run:
           name: Bootstrap Carthage
           command: |
+            echo "Bootstrap Carthage"
             brew update
             brew upgrade carthage
-            carthage update --use-xcframeworks
+            carthage bootstrap
+      - run:
+          name: Carthage Deploy
+          command: |
+            echo "Carthage Deploy"
+            carthage build --no-skip-current
+            carthage archive BatteryWidget
       - save_cache:
           key: v1-dep-{{ .Branch }}-{{ epoch }}
           paths:
@@ -49,16 +62,23 @@ jobs:
                    -destination "name=iPhone 11" | xcpretty -c --test
       - store_artifacts:
           path: /tmp/xcode-test-results
+  "BatteryWidget Release":
+    macos:
+      xcode: '13.1.0'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  version: 2
+  build:
     jobs:
-      - build
+      - "BatteryWidget CI"
+      - "BatteryWidget Release"
+        requires:
+          - "BatteryWidget CI"
 
 
 
-
-              
+# https://github.com/CircleCI-Public/circleci-demo-ios
+# https://github.com/CircleCI-Public/circleci-demo-macos
+# https://github.com/CircleCI-Public/macos-orb
